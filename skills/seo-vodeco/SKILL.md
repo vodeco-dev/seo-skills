@@ -81,3 +81,12 @@ Untuk audit gabungan (claude-seo + aturan Vodeco) pakai skill `seo-vodeco-audit`
 | Halaman dirender JavaScript | Sampaikan keterbatasan, minta view-source atau teks artikel |
 | Keyword utama tidak diketahui | Tanya sekali, lalu pakai asumsi dari H1 dan nyatakan jelas |
 | Tidak ada hasil DA / ZeroGPT | Tulis "perlu dicek" dengan tautan alatnya, jangan menebak angka |
+
+## Pratinjau Markdown (markdownlivepreview.com)
+
+Setelah laporan selesai:
+
+1. Simpan laporan sebagai file `.md` di direktori kerja: `seo-audit-<slug-domain>-<YYYY-MM-DD>.md`. Sebutkan path-nya.
+2. Salin isi file ke clipboard bila ada perintah yang tersedia (`pbcopy` di macOS, `clip` di Windows, `xclip -selection clipboard` atau `wl-copy` di Linux). Jika tidak ada, lewati.
+3. Buka https://markdownlivepreview.com/ di browser bila lingkungan mengizinkan (`open` di macOS, `xdg-open` di Linux, `start` di Windows). Jika tidak bisa (sesi jarak jauh/tanpa browser), cukup tampilkan tautannya.
+4. Beri tahu pengguna dengan jujur: situs itu editor tempel, isi tidak bisa dimuat otomatis. Pengguna perlu menempel (Ctrl+V / Cmd+V) isi file ke panel kiri; pratinjau muncul di kanan. Jangan menyatakan laporan "sudah terbuka" di pratinjau.

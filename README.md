@@ -59,3 +59,7 @@ cmd skills add vodeco-dev/seo-skills/skills/seo-vodeco-audit   # Command Code
 ```
 
 Catatan: otoritas domain ditulis eksplisit sebagai DA (Moz) atau DR (Ahrefs); meta description 120-160 karakter hanyalah rekomendasi, bukan aturan panduan.
+
+## Pratinjau laporan
+
+Setelah audit, kedua skill menyimpan laporan ke `seo-audit-<domain>-<tanggal>.md`, menyalinnya ke clipboard (bila ada `pbcopy`/`clip`/`xclip`/`wl-copy`), dan membuka https://markdownlivepreview.com/ bila browser tersedia. Situs itu editor tempel, jadi tempel isi file ke panel kiri untuk melihat pratinjau.
