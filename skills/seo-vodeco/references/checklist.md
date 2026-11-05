@@ -9,11 +9,11 @@ Sumber: Master Panduan SEO Vodeco, bagian Tahap Optimasi Konten dan Update 2025.
 | A2 | Slug hanya memuat keyword | Ambil path URL | Pendek, huruf kecil, pakai strip, hanya keyword (tanpa stopword panjang, tanggal, angka acak). Gagal bila slug panjang atau berisi kalimat judul |
 | A3 | Keyword di awal SEO title | Baca `<title>` | Keyword berada di awal. Sebagian bila ada tetapi di tengah/akhir |
 | A4 | Keyword & turunan di H1-H3 | Baca heading | Keyword di H1 dan keyword/turunan di minimal sebagian H2/H3, tetap terbaca alami |
-| A5 | Keyword natural, tanpa stuffing | Hitung frekuensi | Wajar (umumnya di bawah sekitar 2-3% kata). Gagal bila dipaksakan berulang |
+| A5 | Keyword natural, tanpa stuffing | Hitung frekuensi | Terbaca alami. Kepadatan (sekitar 2-3% ke bawah) hanya indikator kasar, bukan target: jangan pernah menyarankan menambah keyword demi persentase. Gagal bila dipaksakan berulang; bila rendah tapi natural tetap Lulus |
 | A6 | Keyword turunan dipakai di konten | Bandingkan dengan daftar turunan atau saran Google Related Search | Beberapa turunan/long tail muncul tersebar |
 
 ## B. Meta & Judul (12)
-| B1 | Meta description ada, memuat keyword, menjelaskan keunggulan artikel, mengundang klik | Baca meta | Ada, 120-160 karakter, ada keyword, ada nilai jual. Sebagian bila ada tapi hambar/terlalu pendek/panjang |
+| B1 | Meta description ada, memuat keyword, menjelaskan keunggulan artikel, mengundang klik | Baca meta | Ada, memuat keyword, ada nilai jual. Panduan Vodeco tidak menetapkan panjang; **120-160 karakter adalah rekomendasi umum industri (agar tidak terpotong di SERP), bukan aturan panduan**: di luar rentang cukup beri catatan, jangan menggagalkan. Sebagian bila ada tapi hambar |
 | B2 | Judul artikel menarik dan menjawab search intent | Baca H1/title | Janji judul sesuai maksud pencarian |
 
 ## C. Struktur Heading (10)
@@ -29,7 +29,7 @@ Sumber: Master Panduan SEO Vodeco, bagian Tahap Optimasi Konten dan Update 2025.
 
 ## E. Link (14)
 | E1 | Internal link relevan secara konteks | Hitung link ke domain sendiri | Minimal 2-3 link ke artikel/halaman sekonteks, anchor deskriptif |
-| E2 | Eksternal ke sumber tepercaya, DA 70-100 | Daftar domain eksternal, cek di Ahrefs Website Authority Checker | Domain DA 70-100. Tanpa data DA: "perlu dicek" |
+| E2 | Eksternal ke sumber tepercaya, DA 70-100 | Daftar domain eksternal, cek **DA (Moz)** di https://moz.com/domain-analysis atau **DR (Ahrefs)** di https://ahrefs.com/website-authority-checker; tulis metrik yang dipakai | Domain DA/DR 70-100 (skala berbeda antar alat, sebut yang dipakai, mis. "DA 82 (Moz)"). Tanpa data: "perlu dicek" |
 | E3 | Sumber eksternal fresh (maks 2 tahun), bisa diakses langsung (tanpa paywall) | Cek tanggal dan akses | Terpenuhi |
 | E4 | Eksternal dibuka di tab baru (`target="_blank"`); `rel="nofollow"` hanya bila hanya ingin referensi tanpa membagi traffic | Cek atribut | Terpenuhi |
 | E5 | Tidak ada link rusak | brokenlinkcheck.com atau pengecekan status | Nol link rusak |
@@ -57,5 +57,5 @@ Sumber: Master Panduan SEO Vodeco, bagian Tahap Optimasi Konten dan Update 2025.
 ## Prioritas Perbaikan
 - **Kritis**: gerbang gagal, tanpa H1 atau lebih dari satu, tanpa meta description, link rusak, konten AI di atas 50%.
 - **Tinggi**: keyword tidak di title/slug/100 kata pertama, ALT kosong, tanpa internal link.
-- **Sedang**: tanpa AIDA, DA eksternal rendah, meta tidak optimal.
+- **Sedang**: tanpa AIDA, DA/DR eksternal rendah, meta tidak optimal.
 - **Rendah**: title text gambar, polesan diksi.
