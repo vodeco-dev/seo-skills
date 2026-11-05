@@ -73,6 +73,8 @@ Tampilkan sebagai status terpisah, bukan pengurang skor, tetapi cantumkan di ata
 
 Untuk audit gabungan (claude-seo + aturan Vodeco) pakai skill `seo-vodeco-audit` (`/seo-vodeco-audit <url> "keyword"`). Skill ini tetap berdiri sendiri dan tanpa ketergantungan lain. Lihat `skills/seo-vodeco-audit/SKILL.md`.
 
+Untuk siklus penuh dari keyword sampai terbit (riset, brief, draft, audit, gerbang, laporan, drift) pakai `seo-vodeco-workflow` (`/seo-vodeco-workflow mulai <keyword>`). Tahap auditnya tetap skill ini juga. Lihat `skills/seo-vodeco-workflow/SKILL.md`.
+
 ## Penanganan Error
 
 | Situasi | Tindakan |

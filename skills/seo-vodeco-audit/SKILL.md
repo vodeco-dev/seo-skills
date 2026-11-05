@@ -12,6 +12,8 @@ metadata:
 
 # SEO Vodeco Audit (claude-seo + seo-vodeco)
 
+> Skill ini untuk **audit**. Bila yang diminta siklus konten (riset → brief → draft → audit → terbit), pakai `seo-vodeco-workflow` (`/seo-vodeco-workflow mulai <keyword>`).
+
 Orkestrator tipis. Pembagian tugas:
 
 | Area | Ditangani oleh |
