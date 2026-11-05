@@ -1,0 +1,6 @@
+- Communicates in Indonesian and prefers responses in Indonesian. Confidence: 0.8
+- Prefers skills/slash commands to open with clear step-by-step instructions and a checklist upfront rather than requiring exploration; gets confused when guidance isn't immediately visible. Confidence: 0.8
+- Prefers reports/deliverables (e.g., SEO audit reports) as markdown over PDF export, and wants a simple no-install preview for the team (e.g., https://markdownlivepreview.com/) rather than requiring them to install or run anything. Confidence: 0.75
+- Works in a Linux environment; PDF conversion via Chrome headless works, so tooling/shell commands should target Linux. Confidence: 0.9
+- Keeps and updates his skills in a GitHub repo and expects local/installed copies to be synced from it via git pull (GitHub is the source of truth for skills). Confidence: 0.7
+- The team works in Command Code, not Claude Code — Claude Code isn't distributed to all members, so skills/tooling should be ported to Command Code for team-wide use. Confidence: 0.8
