@@ -20,7 +20,7 @@ Gerbang: AI <lulus/gagal/belum dicek> | Breadcrumb <ya/tidak> | CWV <lulus/gagal
 - ...
 
 ## Perlu Dicek Manual
-- DA domain eksternal: <daftar domain> (Ahrefs Website Authority Checker)
+- Otoritas domain eksternal: <domain: DA nn (Moz) atau DR nn (Ahrefs)>, atau "perlu dicek"
 - Persentase AI: ZeroGPT
 - Link rusak: brokenlinkcheck.com
 - Core Web Vitals: PageSpeed Insights

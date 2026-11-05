@@ -6,7 +6,7 @@ argument-hint: "[url | teks artikel] [keyword utama]"
 license: MIT
 metadata:
   author: Vodeco
-  version: "1.0.0"
+  version: "1.1.0"
   category: seo
   source: "Master Panduan SEO Vodeco Draft 1.1 (On Page SEO Checklist 2024 + Update 2025)"
 ---
@@ -28,7 +28,7 @@ Balas dalam bahasa pengguna (default Bahasa Indonesia).
 1. **Ambil data halaman.** Untuk URL, jalankan `python3 scripts/extract_onpage.py <url>` (hanya library standar Python). Skrip mengeluarkan JSON: title, meta description, canonical, slug, H1-H6, 100 kata pertama, gambar (nama file, alt, title), link internal/eksternal (target, rel), jumlah kata, tanda breadcrumb. Jika skrip gagal (diblokir, perlu JS), gunakan WebFetch atau minta pengguna menempel HTML/teks, dan tandai item yang tidak bisa diverifikasi sebagai `N/A` (bukan gagal).
 2. **Jalankan checklist** di `references/checklist.md`. Setiap item bernilai Lulus / Sebagian / Gagal / N/A.
 3. **Penilaian kualitatif** (tidak bisa otomatis): AIDA pada pembuka, search intent, gaya paragraf, kewajaran keyword, penutup. Nilai dari teks, beri kutipan singkat sebagai bukti.
-4. **Verifikasi manual yang perlu bantuan pengguna** (jangan dikarang, tulis sebagai "perlu dicek"): DA domain eksternal (Ahrefs Website Authority Checker, https://ahrefs.com/website-authority-checker), persentase konten AI (ZeroGPT, https://www.zerogpt.com/), link rusak (https://www.brokenlinkcheck.com/).
+4. **Verifikasi manual yang perlu bantuan pengguna** (jangan dikarang, tulis sebagai "perlu dicek"): otoritas domain eksternal: **DA (Domain Authority, Moz)** via https://moz.com/domain-analysis, atau **DR (Domain Rating, Ahrefs)** via https://ahrefs.com/website-authority-checker. Keduanya skala 0-100 tetapi tidak setara; tulis metrik dan alatnya di laporan, jangan dicampur; persentase konten AI (ZeroGPT, https://www.zerogpt.com/), link rusak (https://www.brokenlinkcheck.com/).
 5. **Hitung skor** dengan bobot di bawah, abaikan item N/A dan normalkan ke 100.
 6. **Tulis laporan** memakai format di `references/output-template.md`.
 
@@ -37,10 +37,10 @@ Balas dalam bahasa pengguna (default Bahasa Indonesia).
 | Kelompok | Bobot | Item |
 |---|---|---|
 | Penempatan keyword | 30 | keyword di 100 kata pertama (6), slug hanya keyword (6), SEO title keyword di awal (6), keyword di H1/H2/H3 (6), pemakaian natural tanpa stuffing (3), keyword turunan (3) |
-| Meta & judul | 12 | meta description ada, menarik, memuat keyword, panjang 120-160 karakter (8), judul menjawab search intent (4) |
+| Meta & judul | 12 | meta description ada, menarik, memuat keyword (8; panjang 120-160 karakter hanya rekomendasi tambahan, bukan aturan panduan), judul menjawab search intent (4) |
 | Struktur heading | 10 | satu H1, urutan H1-H2-H3 rapi tanpa loncat, subjudul informatif |
 | Gambar | 10 | nama file deskriptif dengan strip (4), ALT terisi pada semua gambar (4), title text (1), format WebP/ukuran wajar (1) |
-| Link | 14 | internal link relevan (6), eksternal ke DA 70-100, masih fresh, bisa diakses, buka tab baru (6), tidak ada link rusak (2) |
+| Link | 14 | internal link relevan (6), eksternal ke DA/DR 70-100, masih fresh, bisa diakses, buka tab baru (6), tidak ada link rusak (2) |
 | Pembuka & struktur isi | 10 | AIDA (5), prolog-isi-kesimpulan (3), penutup yang mengajak (2) |
 | Keterbacaan | 6 | paragraf 1-2 kalimat dan 1 ide pokok, transisi halus, diksi sesuai audiens |
 | Search intent & kedalaman | 8 | menjawab intent tanpa mengejar jumlah kata |
@@ -58,7 +58,7 @@ Tampilkan sebagai status terpisah, bukan pengurang skor, tetapi cantumkan di ata
 ## Prinsip
 
 - Panduan menyebut beberapa aturan sebagai "jika memungkinkan" (keyword di 100 kata pertama, keyword di nama file). Beri "Sebagian" dan catatan, bukan gagal keras, bila pembuka sudah jelas menyebut topik.
-- Konten ditulis untuk pembaca. Jangan sarankan keyword stuffing demi skor.
+- Konten ditulis untuk pembaca. Jangan sarankan keyword stuffing demi skor. Kepadatan keyword hanya indikator kasar (umumnya di bawah sekitar 2-3%, bukan target). Jangan pernah menyarankan menambah pengulangan keyword hanya untuk mencapai persentase; bila kepadatan rendah tetapi bacaan natural, tetap Lulus. Bila kepadatan tinggi atau terdengar dipaksakan, sarankan mengurangi atau memakai sinonim dan turunan.
 - Jangan menyalin kredensial, email akun, atau password apa pun dari dokumen internal Vodeco ke laporan.
 - Setiap temuan Gagal harus punya perbaikan konkret (teks pengganti atau tindakan), bukan hanya kritik.
 - Pisahkan fakta terukur (hasil skrip) dari penilaian (hasil bacaan Anda).
@@ -71,7 +71,7 @@ Tampilkan sebagai status terpisah, bukan pengurang skor, tetapi cantumkan di ata
 
 ## Penggunaan sebagai Sub-Skill claude-seo
 
-Letakkan folder ini di `~/.claude/skills/seo-vodeco/`. Skill `seo` dapat memanggilnya setelah audit halaman tunggal (`/seo page <url>`) untuk menambah lapisan "kepatuhan panduan Vodeco". Tidak ada ketergantungan lain.
+Untuk audit gabungan (claude-seo + aturan Vodeco) pakai skill `seo-vodeco-audit` (`/seo-vodeco-audit <url> "keyword"`). Skill ini tetap berdiri sendiri dan tanpa ketergantungan lain. Lihat `skills/seo-vodeco-audit/SKILL.md`.
 
 ## Penanganan Error
 
@@ -81,3 +81,12 @@ Letakkan folder ini di `~/.claude/skills/seo-vodeco/`. Skill `seo` dapat memangg
 | Halaman dirender JavaScript | Sampaikan keterbatasan, minta view-source atau teks artikel |
 | Keyword utama tidak diketahui | Tanya sekali, lalu pakai asumsi dari H1 dan nyatakan jelas |
 | Tidak ada hasil DA / ZeroGPT | Tulis "perlu dicek" dengan tautan alatnya, jangan menebak angka |
+
+## Pratinjau Markdown (markdownlivepreview.com)
+
+Setelah laporan selesai:
+
+1. Simpan laporan sebagai file `.md` di direktori kerja: `seo-audit-<slug-domain>-<YYYY-MM-DD>.md`. Sebutkan path-nya.
+2. Salin isi file ke clipboard bila ada perintah yang tersedia (`pbcopy` di macOS, `clip` di Windows, `xclip -selection clipboard` atau `wl-copy` di Linux). Jika tidak ada, lewati.
+3. Buka https://markdownlivepreview.com/ di browser bila lingkungan mengizinkan (`open` di macOS, `xdg-open` di Linux, `start` di Windows). Jika tidak bisa (sesi jarak jauh/tanpa browser), cukup tampilkan tautannya.
+4. Beri tahu pengguna dengan jujur: situs itu editor tempel, isi tidak bisa dimuat otomatis. Pengguna perlu menempel (Ctrl+V / Cmd+V) isi file ke panel kiri; pratinjau muncul di kanan. Jangan menyatakan laporan "sudah terbuka" di pratinjau.
