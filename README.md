@@ -63,3 +63,7 @@ Catatan: otoritas domain ditulis eksplisit sebagai DA (Moz) atau DR (Ahrefs); me
 ## Pratinjau laporan
 
 Setelah audit, kedua skill menyimpan laporan ke `seo-audit-<domain>-<tanggal>.md`, menyalinnya ke clipboard (bila ada `pbcopy`/`clip`/`xclip`/`wl-copy`), dan membuka https://markdownlivepreview.com/ bila browser tersedia. Situs itu editor tempel, jadi tempel isi file ke panel kiri untuk melihat pratinjau.
+
+## Pemasangan claude-seo otomatis (dengan izin)
+
+Bila `seo-vodeco-audit` tidak menemukan claude-seo, skill bertanya sekali: "claude-seo belum terpasang. Pasang sekarang? (yes/no)". Jawab `yes` agar skill memandu pemasangan (Claude Code: `/plugin marketplace add AgriciDaniel/claude-seo`, `/plugin install claude-seo@agricidaniel-claude-seo`, `/seo setup`) lalu melanjutkan audit penuh. Jawab `no` untuk lanjut mode Vodeco-saja. Tidak ada yang dipasang tanpa `yes` eksplisit. Untuk Command Code, metode pemasangan belum diverifikasi, jadi skill akan meminta Anda memastikan dari dokumentasinya.

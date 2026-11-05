@@ -24,7 +24,18 @@ Balas dalam bahasa pengguna (default Bahasa Indonesia).
 ## Prasyarat
 
 - `seo-vodeco` wajib terpasang (folder `seo-vodeco/` berdampingan dengan skill ini).
-- claude-seo opsional. Jika perintah `/seo` / skill `seo` tersedia, pakai. Jika tidak, jalankan seo-vodeco saja dan sampaikan bahwa bagian teknis/schema/performa/GEO tidak tercakup, lalu sarankan memasang claude-seo (lihat README repo).
+- claude-seo opsional, tetapi ditawarkan lebih dulu (lihat "Cek claude-seo" di bawah).
+
+## Cek claude-seo (sebelum audit)
+
+1. Deteksi: skill `seo` / perintah `/seo` tersedia, atau ada `~/.claude/skills/seo/SKILL.md`, `.claude/skills/seo/SKILL.md`, atau plugin `claude-seo`. Jika ada, lanjut ke Langkah.
+2. Jika **tidak ada**, tanyakan sekali, persis: **"claude-seo belum terpasang. Pasang sekarang? (yes/no)"** lalu berhenti dan tunggu jawaban pengguna.
+3. **Hanya jika pengguna menjawab "yes" (atau "ya")** secara eksplisit:
+   - Claude Code: minta/jalankan `/plugin marketplace add AgriciDaniel/claude-seo`, lalu `/plugin install claude-seo@agricidaniel-claude-seo`, lalu `/seo setup`. Perintah `/plugin` berupa slash command interaktif; bila tidak bisa dijalankan oleh Anda, tampilkan tiga perintah itu agar pengguna menjalankannya, dan tunggu konfirmasi selesai (mungkin perlu restart sesi).
+   - Command Code: metode pasti belum diverifikasi. Cek dokumentasi Command Code atau README claude-seo, sampaikan ketidakpastiannya, dan jangan menebak perintah. Alternatif aman: `cmd skills add AgriciDaniel/claude-seo/skills/seo` hanya bila pengguna setuju setelah Anda menjelaskannya.
+   - Setelah terpasang, lanjutkan audit penuh.
+4. Jika jawaban **"no"**, tidak dijawab, atau ambigu: **jangan memasang apa pun**. Lanjutkan mode Vodeco-saja dan sampaikan bahwa teknis/schema/performa/GEO tidak tercakup. Jangan menanyakan ulang pada sesi yang sama.
+5. Jangan pernah memasang tanpa "yes" eksplisit.
 
 ## Langkah
 
